@@ -1,0 +1,14 @@
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\bin\Debug\net9.0\TicTacToeChallenge.exe
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\bin\Debug\net9.0\TicTacToeChallenge.deps.json
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\bin\Debug\net9.0\TicTacToeChallenge.runtimeconfig.json
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\bin\Debug\net9.0\TicTacToeChallenge.dll
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\bin\Debug\net9.0\TicTacToeChallenge.pdb
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\obj\Debug\net9.0\TicTacToeChallenge.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\obj\Debug\net9.0\TicTacToeChallenge.AssemblyInfoInputs.cache
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\obj\Debug\net9.0\TicTacToeChallenge.AssemblyInfo.cs
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\obj\Debug\net9.0\TicTacToeChallenge.csproj.CoreCompileInputs.cache
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\obj\Debug\net9.0\TicTacToeChallenge.dll
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\obj\Debug\net9.0\refint\TicTacToeChallenge.dll
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\obj\Debug\net9.0\TicTacToeChallenge.pdb
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\obj\Debug\net9.0\TicTacToeChallenge.genruntimeconfig.cache
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\obj\Debug\net9.0\ref\TicTacToeChallenge.dll
