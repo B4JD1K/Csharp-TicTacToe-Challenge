@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+// game board preview
+
 string[,] coordinates = new[,]
 {
     { "1", "2", "3" },
@@ -11,68 +13,83 @@ string[,] coordinates = new[,]
 int playerNumber = 1;
 bool isGameStillActive = true;
 int turnCount = 1;
+int gamesCount = 1;
 string playerMark = "X";
 
-Console.WriteLine(PrintGameBoard(coordinates));
+// game loop
 do
 {
-    Console.WriteLine($"Turn number: {turnCount}. Player {playerNumber}, please choose your field: ");
-
-    int input = Convert.ToInt32(Console.ReadLine());
-
-    if (IsAvailable(input))
+    Console.WriteLine($"Game number {gamesCount}, turn number {turnCount}.");
+    Console.WriteLine(PrintGameBoard(coordinates));
+    Console.Write($"Player {playerNumber}, please choose your field: ");
+    
+    try
     {
-        turnCount++;
-        AssignPlayerMark();
-        switch (input)
+        int input = Convert.ToInt32(Console.ReadLine());
+
+        if (IsAvailable(input))
         {
-            case 1:
-                coordinates[0, 0] = playerMark;
-                break;
-            case 2:
-                coordinates[0, 1] = playerMark;
-                break;
-            case 3:
-                coordinates[0, 2] = playerMark;
-                break;
-            case 4:
-                coordinates[1, 0] = playerMark;
-                break;
-            case 5:
-                coordinates[1, 1] = playerMark;
-                break;
-            case 6:
-                coordinates[1, 2] = playerMark;
-                break;
-            case 7:
-                coordinates[2, 0] = playerMark;
-                break;
-            case 8:
-                coordinates[2, 1] = playerMark;
-                break;
-            case 9:
-                coordinates[2, 2] = playerMark;
-                break;
-            default:
-                Console.WriteLine("Unidentified input.");
-                break;
+            AssignPlayerMark();
+            switch (input)
+            {
+                case 1:
+                    coordinates[0, 0] = playerMark;
+                    break;
+                case 2:
+                    coordinates[0, 1] = playerMark;
+                    break;
+                case 3:
+                    coordinates[0, 2] = playerMark;
+                    break;
+                case 4:
+                    coordinates[1, 0] = playerMark;
+                    break;
+                case 5:
+                    coordinates[1, 1] = playerMark;
+                    break;
+                case 6:
+                    coordinates[1, 2] = playerMark;
+                    break;
+                case 7:
+                    coordinates[2, 0] = playerMark;
+                    break;
+                case 8:
+                    coordinates[2, 1] = playerMark;
+                    break;
+                case 9:
+                    coordinates[2, 2] = playerMark;
+                    break;
+                default:
+                    Console.WriteLine("Unidentified input.");
+                    break;
+            }
+
+            if (turnCount >= 5) CheckIsGameWon();
+
+            if (playerNumber == 1 && isGameStillActive) playerNumber++;
+            else if (playerNumber == 2 && isGameStillActive) playerNumber--;
+
+            Console.Clear();
+
+            if (turnCount % 9 == 0 && isGameStillActive)
+            {
+                ResetGameBoard();
+                Console.WriteLine("Game board is full, but game is not finished yet. Resetting game board.");
+                Console.WriteLine("PLayer {0} will start.", playerNumber);
+            }
+
+            if (isGameStillActive) turnCount++;
         }
-
-        Console.Clear();
-        Console.WriteLine(PrintGameBoard(coordinates));
-
-        if (turnCount >= 5) CheckIsGameWon();
-
-        if (playerNumber == 1 && isGameStillActive) playerNumber++;
-        else if (playerNumber == 2 && isGameStillActive) playerNumber--;
+        else Console.WriteLine("Incorrect pick. Try again.");
     }
-    else
+    catch (FormatException)
     {
-        Console.WriteLine("Incorrect pick. Try again.");
+        Console.WriteLine("\tWrong input type, please provide an Integer from 1-9 range.\n");
     }
 } while (isGameStillActive);
 
-Console.WriteLine("After {0} turns Player {1} won the game!", turnCount, playerNumber);
+Console.WriteLine("Player {0} won the game after {1} turns and {2} games!", playerNumber, turnCount, gamesCount);
+Console.WriteLine(PrintGameBoard(coordinates));
 
 return; // end of Main()
 
@@ -126,4 +143,18 @@ bool IsAvailable(int input)
 {
     // Yes, I could just put this return to if statement, but this is more readable 
     return PrintGameBoard(coordinates).Contains(input.ToString());
+}
+
+void ResetGameBoard()
+{
+    coordinates[0, 0] = "1";
+    coordinates[0, 1] = "2";
+    coordinates[0, 2] = "3";
+    coordinates[1, 0] = "4";
+    coordinates[1, 1] = "5";
+    coordinates[1, 2] = "6";
+    coordinates[2, 0] = "7";
+    coordinates[2, 1] = "8";
+    coordinates[2, 2] = "9";
+    gamesCount++;
 }
