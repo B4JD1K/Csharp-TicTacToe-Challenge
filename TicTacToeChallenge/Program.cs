@@ -30,40 +30,7 @@ do
         if (IsAvailable(input))
         {
             AssignPlayerMark();
-            switch (input)
-            {
-                case 1:
-                    coordinates[0, 0] = playerMark;
-                    break;
-                case 2:
-                    coordinates[0, 1] = playerMark;
-                    break;
-                case 3:
-                    coordinates[0, 2] = playerMark;
-                    break;
-                case 4:
-                    coordinates[1, 0] = playerMark;
-                    break;
-                case 5:
-                    coordinates[1, 1] = playerMark;
-                    break;
-                case 6:
-                    coordinates[1, 2] = playerMark;
-                    break;
-                case 7:
-                    coordinates[2, 0] = playerMark;
-                    break;
-                case 8:
-                    coordinates[2, 1] = playerMark;
-                    break;
-                case 9:
-                    coordinates[2, 2] = playerMark;
-                    break;
-                default:
-                    Console.WriteLine("Unidentified input.");
-                    break;
-            }
-
+            CoordsPickSwitch(input);
             if (turnCount >= 5) CheckIsGameWon();
 
             if (playerNumber == 1 && isGameStillActive) playerNumber++;
@@ -157,4 +124,41 @@ void ResetGameBoard()
     coordinates[2, 1] = "8";
     coordinates[2, 2] = "9";
     gamesCount++;
+}
+
+void CoordsPickSwitch(int input)
+{
+    switch (input)
+    {
+        case 1:
+            coordinates[0, 0] = playerMark;
+            break;
+        case 2:
+            coordinates[0, 1] = playerMark;
+            break;
+        case 3:
+            coordinates[0, 2] = playerMark;
+            break;
+        case 4:
+            coordinates[1, 0] = playerMark;
+            break;
+        case 5:
+            coordinates[1, 1] = playerMark;
+            break;
+        case 6:
+            coordinates[1, 2] = playerMark;
+            break;
+        case 7:
+            coordinates[2, 0] = playerMark;
+            break;
+        case 8:
+            coordinates[2, 1] = playerMark;
+            break;
+        case 9:
+            coordinates[2, 2] = playerMark;
+            break;
+        default:
+            Console.WriteLine("Unidentified input.");
+            break;
+    }
 }
