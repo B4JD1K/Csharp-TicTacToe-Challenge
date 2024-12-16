@@ -12,3 +12,4 @@ C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\obj\Debug\
 C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\obj\Debug\net9.0\TicTacToeChallenge.pdb
 C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\obj\Debug\net9.0\TicTacToeChallenge.genruntimeconfig.cache
 C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\obj\Debug\net9.0\ref\TicTacToeChallenge.dll
+C:\Users\Bajdzior\RiderProjects\TicTacToeChallenge\TicTacToeChallenge\obj\Debug\net9.0\TicTacToeChallenge.sourcelink.json
