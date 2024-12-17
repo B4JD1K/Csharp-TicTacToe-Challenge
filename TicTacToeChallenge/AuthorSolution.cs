@@ -15,8 +15,6 @@ int player = 2;
 int input = 0;
 bool inputCorrect = true;
 
-SetField();
-
 do
 {
     if (player == 2)
@@ -30,6 +28,66 @@ do
         EnterXorO(player, input);
     }
 
+    SetField();
+
+    #region 
+    // Test if field is already taken
+    do
+    {
+        Console.WriteLine("\nPlayer {0}: Choose your field! ", player);
+        try
+        {
+            input = Convert.ToInt32(Console.ReadLine());
+        }
+        catch
+        {
+            Console.WriteLine("Please enter a number!");
+        }
+
+        if (input == 1 && playField[0, 0] == '1')
+        {
+            inputCorrect = true;
+        }
+        else if (input == 1 && playField[0, 1] == '2')
+        {
+            inputCorrect = true;
+        }
+        else if (input == 1 && playField[0, 2] == '3')
+        {
+            inputCorrect = true;
+        }
+        else if (input == 1 && playField[1, 0] == '4')
+        {
+            inputCorrect = true;
+        }
+        else if (input == 1 && playField[1, 1] == '5')
+        {
+            inputCorrect = true;
+        }
+        else if (input == 1 && playField[1, 2] == '6')
+        {
+            inputCorrect = true;
+        }
+        else if (input == 1 && playField[2, 0] == '7')
+        {
+            inputCorrect = true;
+        }
+        else if (input == 1 && playField[2, 1] == '8')
+        {
+            inputCorrect = true;
+        }
+        else if (input == 1 && playField[2, 2] == '9')
+        {
+            inputCorrect = true;
+        }
+        else
+        {
+            Console.WriteLine("\n Incorrect input! Please use another field!");
+            inputCorrect = false;
+        }
+    } while (!inputCorrect);
+    #endregion
+
     
     
     
@@ -42,6 +100,7 @@ return;
 // public static void SetField()
 void SetField()
 {
+    Console.Clear();
     Console.WriteLine("     |     |     ");
     Console.WriteLine("  {0}  |  {1}  |  {2}  ", playField[0, 0], playField[0, 1], playField[0, 2]);
     Console.WriteLine("_____|_____|_____");
