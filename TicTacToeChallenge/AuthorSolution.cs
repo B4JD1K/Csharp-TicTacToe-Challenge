@@ -11,14 +11,6 @@ char[,] playField =
     { '7', '8', '9' }
 };
 
-//static char[,] playFieldInitial
-char[,] playFieldInitial =
-{
-    { '1', '2', '3' },
-    { '4', '5', '6' },
-    { '7', '8', '9' }
-};
-
 // static int turns = 0;
 int turns = 0;
 
@@ -31,12 +23,12 @@ do
     if (player == 2)
     {
         player = 1;
-        EnterXorO(player, input);
+        EnterXorO('O', input);
     }
     else if (player == 1)
     {
         player = 2;
-        EnterXorO(player, input);
+        EnterXorO('X', input);
     }
 
     SetField();
@@ -151,6 +143,15 @@ return;
 // public static void ResetField()
 void ResetField()
 {
+    
+// char[,] playFieldInitial
+    char[,] playFieldInitial =
+    {
+        { '1', '2', '3' },
+        { '4', '5', '6' },
+        { '7', '8', '9' }
+    };
+    
     playField = playFieldInitial;
     turns = 0;
     SetField();
@@ -173,14 +174,8 @@ void SetField()
 }
 
 // public static void EnterXorO(int player, int input)
-void EnterXorO(int player, int input)
+void EnterXorO(char playerSign, int input)
 {
-    char playerSign = ' ';
-    if (player == 1)
-        playerSign = 'X';
-    else if (player == 2)
-        playerSign = 'O';
-
     switch (input)
     {
         case 1: playField[0, 0] = playerSign; break;
