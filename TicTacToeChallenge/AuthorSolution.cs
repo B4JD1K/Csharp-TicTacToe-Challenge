@@ -30,7 +30,33 @@ do
 
     SetField();
 
-    #region 
+    #region
+
+    // Check winning condition
+    char[] playerChars = { 'X', 'O' };
+
+    foreach (char playerChar in playerChars)
+    {
+        if (((playField[0, 0] == playerChar) && (playField[0, 1] == playerChar) && (playField[0, 2] == playerChar))
+            || ((playField[1, 0] == playerChar) && (playField[1, 1] == playerChar) && (playField[1, 2] == playerChar))
+            || ((playField[2, 0] == playerChar) && (playField[2, 1] == playerChar) && (playField[2, 2] == playerChar))
+            || ((playField[0, 0] == playerChar) && (playField[1, 0] == playerChar) && (playField[2, 0] == playerChar))
+            || ((playField[0, 1] == playerChar) && (playField[1, 1] == playerChar) && (playField[1, 2] == playerChar))
+            || ((playField[0, 2] == playerChar) && (playField[2, 1] == playerChar) && (playField[2, 2] == playerChar))
+            || ((playField[0, 0] == playerChar) && (playField[1, 1] == playerChar) && (playField[2, 2] == playerChar))
+            || ((playField[0, 2] == playerChar) && (playField[1, 1] == playerChar) && (playField[2, 0] == playerChar))
+           )
+        {
+            if (playerChar == 'X') Console.WriteLine("\nPlayer 2 has won!");
+            else Console.WriteLine("\nPlayer 1 has won!");
+            break;
+        }
+    }
+
+    #endregion
+
+    #region
+
     // Test if field is already taken
     do
     {
@@ -86,6 +112,7 @@ do
             inputCorrect = false;
         }
     } while (!inputCorrect);
+
     #endregion
 
     
