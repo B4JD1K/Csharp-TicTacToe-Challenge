@@ -11,6 +11,17 @@ char[,] playField =
     { '7', '8', '9' }
 };
 
+//static char[,] playFieldInitial
+char[,] playFieldInitial =
+{
+    { '1', '2', '3' },
+    { '4', '5', '6' },
+    { '7', '8', '9' }
+};
+
+// static int turns = 0;
+int turns = 0;
+
 int player = 2;
 int input = 0;
 bool inputCorrect = true;
@@ -47,8 +58,26 @@ do
             || ((playField[0, 2] == playerChar) && (playField[1, 1] == playerChar) && (playField[2, 0] == playerChar))
            )
         {
-            if (playerChar == 'X') Console.WriteLine("\nPlayer 2 has won!");
-            else Console.WriteLine("\nPlayer 1 has won!");
+            if (playerChar == 'X')
+            {
+                Console.WriteLine("\nPlayer 2 has won!");
+            }
+            else
+            {
+                Console.WriteLine("\nPlayer 1 has won!");
+            }
+
+            Console.WriteLine("Please press any key to reset the game!");
+            Console.ReadKey();
+            ResetField();
+            break;
+        }
+        else if (turns == 10)
+        {
+            Console.WriteLine("\nDRAW!");
+            Console.WriteLine("Please press any key to reset the game!");
+            Console.ReadKey();
+            ResetField();
             break;
         }
     }
@@ -74,35 +103,35 @@ do
         {
             inputCorrect = true;
         }
-        else if (input == 1 && playField[0, 1] == '2')
+        else if (input == 2 && playField[0, 1] == '2')
         {
             inputCorrect = true;
         }
-        else if (input == 1 && playField[0, 2] == '3')
+        else if (input == 3 && playField[0, 2] == '3')
         {
             inputCorrect = true;
         }
-        else if (input == 1 && playField[1, 0] == '4')
+        else if (input == 4 && playField[1, 0] == '4')
         {
             inputCorrect = true;
         }
-        else if (input == 1 && playField[1, 1] == '5')
+        else if (input == 5 && playField[1, 1] == '5')
         {
             inputCorrect = true;
         }
-        else if (input == 1 && playField[1, 2] == '6')
+        else if (input == 6 && playField[1, 2] == '6')
         {
             inputCorrect = true;
         }
-        else if (input == 1 && playField[2, 0] == '7')
+        else if (input == 7 && playField[2, 0] == '7')
         {
             inputCorrect = true;
         }
-        else if (input == 1 && playField[2, 1] == '8')
+        else if (input == 8 && playField[2, 1] == '8')
         {
             inputCorrect = true;
         }
-        else if (input == 1 && playField[2, 2] == '9')
+        else if (input == 9 && playField[2, 2] == '9')
         {
             inputCorrect = true;
         }
@@ -114,15 +143,18 @@ do
     } while (!inputCorrect);
 
     #endregion
-
-    
-    
-    
-    
 } while (true);
 
 
 return;
+
+// public static void ResetField()
+void ResetField()
+{
+    playField = playFieldInitial;
+    turns = 0;
+    SetField();
+}
 
 // public static void SetField()
 void SetField()
@@ -137,6 +169,7 @@ void SetField()
     Console.WriteLine("     |     |     ");
     Console.WriteLine("  {0}  |  {1}  |  {2}  ", playField[2, 0], playField[2, 1], playField[2, 2]);
     Console.WriteLine("     |     |     ");
+    turns++;
 }
 
 // public static void EnterXorO(int player, int input)

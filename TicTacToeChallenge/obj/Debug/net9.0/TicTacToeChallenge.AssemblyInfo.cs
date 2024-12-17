@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TicTacToeChallenge")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea616cbefbc66c62aa6b0deb7088d1efb437a8ad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+756c21c89d075bb074a53bd0d2c2786ec2394697")]
 [assembly: System.Reflection.AssemblyProductAttribute("TicTacToeChallenge")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TicTacToeChallenge")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
